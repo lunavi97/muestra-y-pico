@@ -42,5 +42,11 @@ public class PicoTests {
         al.add(1);
         Assert.assertEquals(9, pico.obtener(al));
     }
+    
+    @Test
+    public void buscar() {
+        int[] vec = {4, 6, 8, 10, 7, 3, 2, 1};
+        Assert.assertEquals(10, pico.buscar(vec));
+    }
 
 }
