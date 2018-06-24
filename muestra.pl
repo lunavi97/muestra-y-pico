@@ -15,3 +15,7 @@ muestra_valida(N, Min, Max) :- medicion(N, Min, Max), Max - Min < 10000.
 
 %Primera muestra válida
 primera_muestra_valida(N, Min, Max) :- muestra_valida(N, Min, Max), !.
+
+%Muestras válidas con mayor ValMax
+menores_val_max(Max) :- muestra_valida(_, _, Max), muestra_valida(_, _, Max2), Max < Max2.
+muestra_mayor_val_max(N, Min, Max) :- muestra_valida(N, Min, Max), not(menores_val_max(Max)).
