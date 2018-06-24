@@ -10,5 +10,8 @@ medicion(8, 12000, 23000).
 medicion(9, 21000, 32000).
 medicion(10, 15000, 16000).
 
-% Las muestras válidas tienen ValMax - ValMin < 10000
+%Las muestras válidas tienen ValMax - ValMin < 10000
 muestra_valida(N, Min, Max) :- medicion(N, Min, Max), Max - Min < 10000.
+
+%Primera muestra válida
+primera_muestra_valida(N, Min, Max) :- muestra_valida(N, Min, Max), !.
